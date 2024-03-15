@@ -11,7 +11,7 @@ public class LevelTrigger : MonoBehaviour
         int _rand = Random.Range(0, _map.Count);
         if (other.gameObject.CompareTag("Trigger"))
         {
-            Instantiate(_map[_rand], new Vector3(0,-11,0), Quaternion.identity);
+            Instantiate(_map[_rand], new Vector3(9,0,0), Quaternion.identity);
         }
     }
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Trigger
   - Destroy
+  - MapDestroy
   layers:
   - Default
   - TransparentFX
