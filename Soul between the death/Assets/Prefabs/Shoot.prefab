@@ -57,8 +57,16 @@ PrefabInstance:
       value: Shoot
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b1c6d10c14a6e6b4b9edef23793f736d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b1c6d10c14a6e6b4b9edef23793f736d, type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374528555654383111, guid: b1c6d10c14a6e6b4b9edef23793f736d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -70,6 +78,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b1c6d10c14a6e6b4b9edef23793f736d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2172689139391944718}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b1c6d10c14a6e6b4b9edef23793f736d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4063760915924625786}
   m_SourcePrefab: {fileID: 100100000, guid: b1c6d10c14a6e6b4b9edef23793f736d, type: 3}
 --- !u!1 &8676486188737309230 stripped
 GameObject:
@@ -88,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16944afc3c4ffb44fbfd4aeee5f67d97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxFallSpeed: 5
 --- !u!65 &2172689139391944718
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -109,3 +121,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &4063760915924625786
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8676486188737309230}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 196
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

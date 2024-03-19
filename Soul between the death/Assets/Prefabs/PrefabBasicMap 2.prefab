@@ -102,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3002487360399255941}
   - component: {fileID: 5368140626858059153}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Box Collider
   m_TagString: Trigger
   m_Icon: {fileID: 0}

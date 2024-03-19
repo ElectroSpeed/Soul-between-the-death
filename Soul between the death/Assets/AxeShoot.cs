@@ -4,24 +4,33 @@ using UnityEngine;
 
 public class AxeShoot : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Rigidbody _rb;
+
+    [SerializeField] private float _maxFallSpeed = 5;
+
+    private void Awake()
     {
-        
+        _rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(0, -2, 0) * Time.deltaTime;
+        if (_rb.velocity.y < -_maxFallSpeed)
+        {
+            _rb.useGravity = false;
+        }
+        else
+        {
+            _rb.useGravity = true;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("MapDestroy"))
+        if ((other.gameObject.CompareTag("MapDestroy") || other.gameObject.CompareTag("Ennemi") && !other.gameObject.CompareTag("Player")))
         {
-            Destroy(gameObject);
             Destroy(other.gameObject);
         }
+        Destroy(gameObject);
     }
 }
