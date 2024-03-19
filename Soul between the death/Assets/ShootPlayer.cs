@@ -8,6 +8,7 @@ public class ShootPlayer : MonoBehaviour
 {
 
     [SerializeField] private GameObject _bullet;
+    [SerializeField] private GameObject _player;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class ShootPlayer : MonoBehaviour
     {
         if (context.started)
         {
-            GameObject _bulletInstantiate = Instantiate(_bullet, new Vector3(0, transform.position.y, 0), Quaternion.identity);
+            GameObject _bulletInstantiate = Instantiate(_bullet, new Vector3(_player.transform.position.x, transform.position.y, 0), Quaternion.identity);
         }
     }
 }

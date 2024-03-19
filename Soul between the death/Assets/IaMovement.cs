@@ -26,7 +26,7 @@ public class IaMovement : MonoBehaviour
         {
             LeftIA();
         }
-        else
+        if (_left)
         {
             RightIA();
         }
@@ -49,12 +49,12 @@ public class IaMovement : MonoBehaviour
     {
         if (transform.position.x <= -6)
         {
-            transform.position += new Vector3(-2, 0, 0) * Time.deltaTime;
+            _right = false;
+            _left = true;
         }
         else
         {
-            _right = false;
-            _left = true;
+            transform.position += new Vector3(-2, 0, 0) * Time.deltaTime;
         }
     }
 }

@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
         {
             LeftMovement();
         }
+
+        transform.position += new Vector3(0, -6, 0) * Time.deltaTime;
     }
 
     public void PlayerRightCheck(InputAction.CallbackContext context)
@@ -47,10 +49,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void RightMovement()
     {
-        transform.position += new Vector3(2, 0, 0) * Time.deltaTime;
+        transform.position += new Vector3(4, 0, 0) * Time.deltaTime;
     }
     private void LeftMovement()
     {
-        transform.position += new Vector3(-2, 0, 0) * Time.deltaTime;
+        transform.position += new Vector3(-4, 0, 0) * Time.deltaTime;
     }
 }
