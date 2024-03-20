@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class LevelTrigger : MonoBehaviour
 {
     public List <GameObject> _map = new List<GameObject>();
     [SerializeField] private GameObject _player;
-    public int _level = 2;
+    public int _level = 0;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,6 +16,8 @@ public class LevelTrigger : MonoBehaviour
         {
             Instantiate(_map[_rand], new Vector3(9, -14 * _level, 0), Quaternion.identity);
             _level += 1;
+            Destroy(other.gameObject);
+            GameObject.Find("Point").transform.Find("Compteur").GetComponent<TextMeshProUGUI>().text = ((int)_level).ToString();
         }
     }
 }
