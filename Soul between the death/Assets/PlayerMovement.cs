@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.HID;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,8 +14,9 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float _maxFallSpeed = 5;
     [SerializeField] private float _jumpForce = 5;
+    [SerializeField] private int _jumpNumb = 1;
 
-    private bool _isOnFloor = false; public bool IsOnFloor { get { return _isOnFloor; } }
+    [SerializeField] private bool _isOnFloor = false; public bool IsOnFloor { get { return _isOnFloor; } }
 
     public UnityEvent TouchGroundEvent;
 
@@ -49,24 +51,19 @@ public class PlayerMovement : MonoBehaviour
         {
             _rb.useGravity = true;
         }
-        //transform.position += new Vector3(0, -6, 0) * Time.deltaTime;
+        //Debug.Log(_rb.velocity.y >= 0);Debug.Log(_rb.velocity.y);
+        
 
-        if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hitInfo, 1, ~(1 << LayerMask.NameToLayer("bullet") | 1 << LayerMask.NameToLayer("Ignore Raycast"))))
-        {
-            TouchGroundEvent?.Invoke();
-            _isOnFloor = true;
-        }
-        else
-        {
-            _isOnFloor = false;
-        }
     }
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.started && _isOnFloor)
+        Debug.Log("Début");
+        if (context.started  && IsGrounded())
         {
             _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+            Debug.Log("Jump");
+            _isOnFloor = false;
         }
     }
 
@@ -101,5 +98,20 @@ public class PlayerMovement : MonoBehaviour
     private void LeftMovement()
     {
         _rb.velocity = new Vector3(-4, _rb.velocity.y, 0);
+    }
+
+    public bool IsGrounded()
+    {
+            if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hitInfo, 2, ~(1 << LayerMask.NameToLayer("bullet") | 1 << LayerMask.NameToLayer("Ignore Raycast") | 1 << LayerMask.NameToLayer("Player"))))
+            {
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hitInfo.distance, Color.yellow);
+                TouchGroundEvent?.Invoke();
+            print(hitInfo.collider);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
     }
 }

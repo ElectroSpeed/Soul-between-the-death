@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -1184814685811199179, guid: e2391a8c705c8aa43952ea0f90a53ecb, type: 3}
+      propertyPath: m_TagString
+      value: MapDestroy
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e2391a8c705c8aa43952ea0f90a53ecb, type: 3}
       propertyPath: m_Name
       value: RockShortFlat_E
@@ -84,23 +88,23 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e2391a8c705c8aa43952ea0f90a53ecb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -7572929977459713413}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e2391a8c705c8aa43952ea0f90a53ecb, type: 3}
-      insertIndex: -1
       addedObject: {fileID: -1616218096680249942}
+    - targetCorrespondingSourceObject: {fileID: -1184814685811199179, guid: e2391a8c705c8aa43952ea0f90a53ecb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1056359793021112862}
   m_SourcePrefab: {fileID: 100100000, guid: e2391a8c705c8aa43952ea0f90a53ecb, type: 3}
---- !u!1 &4962561635286357703 stripped
+--- !u!1 &2851155697766897827 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e2391a8c705c8aa43952ea0f90a53ecb, type: 3}
+  m_CorrespondingSourceObject: {fileID: -1184814685811199179, guid: e2391a8c705c8aa43952ea0f90a53ecb, type: 3}
   m_PrefabInstance: {fileID: 5197125736266509206}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &-7572929977459713413
-BoxCollider:
+--- !u!64 &1056359793021112862
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4962561635286357703}
+  m_GameObject: {fileID: 2851155697766897827}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -112,9 +116,15 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 15, y: 4, z: 15}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1540453193027430895, guid: e2391a8c705c8aa43952ea0f90a53ecb, type: 3}
+--- !u!1 &4962561635286357703 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e2391a8c705c8aa43952ea0f90a53ecb, type: 3}
+  m_PrefabInstance: {fileID: 5197125736266509206}
+  m_PrefabAsset: {fileID: 0}
 --- !u!54 &-1616218096680249942
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -27,10 +27,16 @@ public class AxeShoot : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if ((other.gameObject.CompareTag("MapDestroy") || other.gameObject.CompareTag("Ennemi") && !other.gameObject.CompareTag("Player")))
+        if (other.gameObject.CompareTag("Player"))
+            return;
+
+        Debug.Log(other.tag);
+        if (other.gameObject.CompareTag("MapDestroy") || other.gameObject.CompareTag("Ennemi"))
         {
             Destroy(other.gameObject);
         }
+        
+        
         Destroy(gameObject);
     }
 }

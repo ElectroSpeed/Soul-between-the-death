@@ -80,23 +80,23 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4e2dcb257e5ba394b94782613f638484, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8686003643681200288}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4e2dcb257e5ba394b94782613f638484, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2993349436132797829}
+    - targetCorrespondingSourceObject: {fileID: -62567312594202195, guid: 4e2dcb257e5ba394b94782613f638484, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6313804392826900055}
   m_SourcePrefab: {fileID: 100100000, guid: 4e2dcb257e5ba394b94782613f638484, type: 3}
---- !u!1 &7001378394467964898 stripped
+--- !u!1 &1353676950749788958 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4e2dcb257e5ba394b94782613f638484, type: 3}
+  m_CorrespondingSourceObject: {fileID: -62567312594202195, guid: 4e2dcb257e5ba394b94782613f638484, type: 3}
   m_PrefabInstance: {fileID: 7919735387790420659}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &8686003643681200288
-BoxCollider:
+--- !u!64 &6313804392826900055
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7001378394467964898}
+  m_GameObject: {fileID: 1353676950749788958}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -108,9 +108,15 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 18.027256, y: 7.0000005, z: 15}
-  m_Center: {x: -0.72131073, y: 0, z: 0}
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2621150676909896770, guid: 4e2dcb257e5ba394b94782613f638484, type: 3}
+--- !u!1 &7001378394467964898 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4e2dcb257e5ba394b94782613f638484, type: 3}
+  m_PrefabInstance: {fileID: 7919735387790420659}
+  m_PrefabAsset: {fileID: 0}
 --- !u!54 &2993349436132797829
 Rigidbody:
   m_ObjectHideFlags: 0

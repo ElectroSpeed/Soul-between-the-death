@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -62567312594202195, guid: 4e2dcb257e5ba394b94782613f638484, type: 3}
+      propertyPath: m_TagString
+      value: MapDestroy
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4e2dcb257e5ba394b94782613f638484, type: 3}
       propertyPath: m_Name
       value: RockShortFlat_A
@@ -84,23 +88,23 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4e2dcb257e5ba394b94782613f638484, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7671859097760746556}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4e2dcb257e5ba394b94782613f638484, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 9110150858520907885}
+    - targetCorrespondingSourceObject: {fileID: -62567312594202195, guid: 4e2dcb257e5ba394b94782613f638484, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7093395753150640682}
   m_SourcePrefab: {fileID: 100100000, guid: 4e2dcb257e5ba394b94782613f638484, type: 3}
---- !u!1 &7001378394467964898 stripped
+--- !u!1 &1353676950749788958 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4e2dcb257e5ba394b94782613f638484, type: 3}
+  m_CorrespondingSourceObject: {fileID: -62567312594202195, guid: 4e2dcb257e5ba394b94782613f638484, type: 3}
   m_PrefabInstance: {fileID: 7919735387790420659}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &7671859097760746556
-BoxCollider:
+--- !u!64 &7093395753150640682
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7001378394467964898}
+  m_GameObject: {fileID: 1353676950749788958}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -112,9 +116,15 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 15, y: 4, z: 15}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2621150676909896770, guid: 4e2dcb257e5ba394b94782613f638484, type: 3}
+--- !u!1 &7001378394467964898 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4e2dcb257e5ba394b94782613f638484, type: 3}
+  m_PrefabInstance: {fileID: 7919735387790420659}
+  m_PrefabAsset: {fileID: 0}
 --- !u!54 &9110150858520907885
 Rigidbody:
   m_ObjectHideFlags: 0
