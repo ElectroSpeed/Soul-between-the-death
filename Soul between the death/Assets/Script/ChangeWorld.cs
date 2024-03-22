@@ -6,6 +6,13 @@ public class ChangeWorld : MonoBehaviour
 {
     private bool _devil = true ;
     public Material _rockMaterial;
+    public Material _angelMaterial;
+    public Material _lavaMaterial;
+    public Material _soulMaterial;
+    public Material _swordMaterial;
+    public Material _skyboxAngelMaterial;
+    public Material _skyboxDevilMaterial;
+    public Skybox _skyBox;
     void Start()
     {
 
@@ -32,13 +39,23 @@ public class ChangeWorld : MonoBehaviour
             if (_devil)
             {
                 Debug.Log("ColorChange");
-                _rockMaterial.color = HexToColor("#FF0000");
+                _rockMaterial.color = HexToColor("#FFFFFF");
+                _angelMaterial.color = HexToColor("#000000");
+                _soulMaterial.color = HexToColor("#FFFFFF");
+                _swordMaterial.color = HexToColor("#00AED9");
+                _lavaMaterial.color = HexToColor("#3842FB");
+                _skyBox.material = _skyboxAngelMaterial;
                 _devil = false;
             }
-            else if (!_devil)
+            else
             {
                 Debug.Log("ColorChange");
                 _rockMaterial.color = HexToColor("#525252");
+                _angelMaterial.color = HexToColor("#FFFFFF");
+                _soulMaterial.color = HexToColor("#4B0000");
+                _swordMaterial.color = HexToColor("#D90000");
+                _lavaMaterial.color = HexToColor("#FFFFFF");
+                _skyBox.material = _skyboxDevilMaterial;
                 _devil = true;
             }
 
