@@ -7,6 +7,7 @@ public class LifePlayer : MonoBehaviour
     public int _health = 3;
     [SerializeField] private GameObject _player;
     [SerializeField] private ButtonManager _menu;
+    [SerializeField] private GameObject _damage;
 
     public static LifePlayer Instance;
 
@@ -36,6 +37,7 @@ public class LifePlayer : MonoBehaviour
         {
             _audioSource.Play();
             _health--;
+            Instantiate(_damage, _player.transform.position, Quaternion.identity);
             if (_health == 0)
             {
                 _menu.EndMenu();
