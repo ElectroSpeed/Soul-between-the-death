@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LifePlayer : MonoBehaviour
 {
-    public int _health = 3;
+    public int _health;
     [SerializeField] private GameObject _player;
     [SerializeField] private ButtonManager _menu;
     [SerializeField] private GameObject _damage;
@@ -16,6 +16,7 @@ public class LifePlayer : MonoBehaviour
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
+        _health = 3;
     }
 
 
@@ -30,10 +31,13 @@ public class LifePlayer : MonoBehaviour
         Debug.Log(_health);
     }
 
-
+    public void UpHealth()
+    {
+        _health++;
+    }
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Ennemi")|| other.gameObject.CompareTag("MapDestroy"))
+        if (other.gameObject.CompareTag("Ennemi"))
         {
             _audioSource.Play();
             _health--;

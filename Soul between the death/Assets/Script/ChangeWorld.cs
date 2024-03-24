@@ -13,6 +13,9 @@ public class ChangeWorld : MonoBehaviour
     public Material _skyboxAngelMaterial;
     public Material _skyboxDevilMaterial;
     public Skybox _skyBox;
+
+    [SerializeField] private LifePlayer _life;
+    public AudioSource _audioSource;
     void Start()
     {
 
@@ -35,6 +38,8 @@ public class ChangeWorld : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Color"))
         {
+            _life.UpHealth();
+            _audioSource.Play();
             Debug.Log("Contact");
             if (_devil)
             {
@@ -46,6 +51,7 @@ public class ChangeWorld : MonoBehaviour
                 _lavaMaterial.color = HexToColor("#3842FB");
                 _skyBox.material = _skyboxAngelMaterial;
                 _devil = false;
+                
             }
             else
             {
@@ -57,6 +63,7 @@ public class ChangeWorld : MonoBehaviour
                 _lavaMaterial.color = HexToColor("#FFFFFF");
                 _skyBox.material = _skyboxDevilMaterial;
                 _devil = true;
+                Destroy(other.gameObject);
             }
 
         }
